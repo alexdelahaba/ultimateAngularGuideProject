@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
   @Input() datoDeMiPadre: string;
+  @Input('datoNumero2') otroDatoRecibido: string;
   constructor() {}
 
   ngOnInit(): void {}

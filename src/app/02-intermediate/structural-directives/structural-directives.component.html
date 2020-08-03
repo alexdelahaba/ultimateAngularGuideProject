@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Directivas estructurales</h1>
-  <h3>*ngIf & *ngFor</h3>
+  <h3>## *ngIf & *ngFor</h3>
   <p *ngIf="true">true</p>
   <p *ngIf="false">false</p>
 
@@ -15,7 +15,7 @@
   </ng-container>
 
   <hr />
-  <h3>ngClass</h3>
+  <h3>## ngClass</h3>
   <button class="btn"
           [ngClass]="{'btn-primary': ejemploBoolean, 'btn-danger':!ejemploBoolean}"
           (click)="ejemploBoolean = !ejemploBoolean">Click me</button>
@@ -25,13 +25,13 @@
           [ngClass]="claseAplicadaDirectamente">Tercer button</button>
 
   <hr />
-  <h3>ngSwitch</h3>
+  <h3>## ngSwitch</h3>
   <button class="btn btn-primary"
           (click)="numeroPagina = numeroPagina+1">+1</button>
   <div [ngSwitch]="numeroPagina">
 
     <div *ngSwitchCase="0">
-      <h1>Titulo</h1>
+      <h5>Titulo pequeño</h5>
     </div>
     <div *ngSwitchCase="1">
       <p>Párrafo</p>
@@ -48,8 +48,16 @@
   </div>
 
   <hr />
-  <h3>Custom directives</h3>
-  <p>Para generar una directiva customizada => ng g directive miClasePersonalizada
+  <h3>## Custom directives</h3>
+  <p>Para generar una directiva customizada => ng g directive miDirectivaPersonalizada
   </p>
-  <button appMiClasePersonalizada>Boton especial</button>
+  <button [appMiClasePersonalizada]="'orange'">Boton especial</button>
+  <a class="ml-4"
+     href="https://developer.mozilla.org/es/docs/Web/API/Element">Ver link</a>
+
+  <hr />
+  <h3>## Custom structural directives</h3>
+  <ol *appNVeces="5; let index = indiceRetornado; let textoDirectiva = textoAniadido">
+    <li>Soy el item: {{index + 1}} - {{textoDirectiva}}</li>
+  </ol>
 </div>

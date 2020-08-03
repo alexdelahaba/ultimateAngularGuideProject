@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   datoParaMiHijo = 'Hola hijo';
+  datoNumero2 = 'Yo soy otro dato para ser heredado';
   constructor() {}
 
   ngOnInit(): void {}
