@@ -1,0 +1,175 @@
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
+
+<div class="row">
+  <div class="col">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Variable</th>
+          <th>Pipe</th>
+          <th>Salida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{nombre}}</td>
+          <td>| uppercase</td>
+          <td>{{nombre | uppercase}}</td>
+        </tr>
+        <tr>
+          <td>{{nombre}}</td>
+          <td>| lowercase</td>
+          <td>{{nombre | lowercase}}</td>
+        </tr>
+        <tr>
+          <td>{{nombre}}</td>
+          <td>| slice:3</td>
+          <td>{{nombre | slice:3}}</td>
+        </tr>
+        <tr>
+          <td>{{nombre}}</td>
+          <td>| slice:0:3</td>
+          <td>{{nombre | slice:0:3}}</td>
+        </tr>
+        <tr>
+          <td class="table-dark">
+            Números
+          </td>
+        </tr>
+        <tr>
+          <td>array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</td>
+          <td>| slice:1:5</td>
+          <td>{{array | slice:1:5}} </td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>| number</td>
+          <td>{{PI | number}} </td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>| number:'1.0-0'</td>
+          <td>{{PI | number:'1.0-0'}} </td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>| number:'3.0-0'</td>
+          <td>{{PI | number:'3.0-0'}} </td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>| number:'.0-2'</td>
+          <td>{{PI | number:'.0-2'}} </td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>| number:'.0-2'</td>
+          <td>{{PI | number:'.0-2'}} </td>
+        </tr>
+        <tr>
+          <td class="table-dark">
+            Porcentajes
+          </td>
+        </tr>
+        <tr>
+          <td>{{porcentaje}}</td>
+          <td>| percent</td>
+          <td>{{porcentaje | percent}} </td>
+        </tr>
+        <tr>
+          <td>{{porcentaje}}</td>
+          <td>| percent:'2.2-2'</td>
+          <td>{{porcentaje | percent:'2.2-2'}} </td>
+        </tr>
+        <tr>
+          <td>{{porcentaje}}</td>
+          <td>| percent:'2.0-2'</td>
+          <td>{{porcentaje | percent:'2.0-2'}} </td>
+        </tr>
+        <tr>
+          <td class="table-dark">
+            Moneda
+          </td>
+        </tr>
+        <tr>
+          <td>{{salario}}</td>
+          <td>| currency</td>
+          <td>{{salario | currency}} </td>
+        </tr>
+        <tr>
+          <td>{{salario}}</td>
+          <td>| currency:'EUR'</td>
+          <td>{{salario | currency:'EUR'}} </td>
+        </tr>
+        <tr>
+          <td>{{salario}}</td>
+          <td>| currency:'CAD':'symbol':'.0-0'</td>
+          <td>{{salario | currency:'CAD':'symbol':'.0-0'}} </td>
+        </tr>
+        <tr>
+          <td>{{salario}}</td>
+          <td>| currency:'LMP ':'symbol':'.0-0' (LMP no existe)</td>
+          <td>{{salario | currency:'LMP ':'symbol':'.0-0'}} </td>
+        </tr>
+        <tr>
+          <td class="table-dark">
+            Async
+          </td>
+        </tr>
+        <tr>
+          <td>{{valorPromesa}} (se resuelve en 4,5 sg)</td>
+          <td>| async</td>
+          <td>{{valorPromesa | async}} </td>
+        </tr>
+        <tr>
+          <td class="table-dark">
+            Fechas <a href="https://angular.io/api/common/DatePipe">+ info</a>
+          </td>
+        </tr>
+        <tr>
+          <td>{{fecha}} </td>
+          <td>| date</td>
+          <td>{{fecha | date}} </td>
+        </tr>
+        <tr>
+          <td>{{fecha}} </td>
+          <td>| date:'medium'</td>
+          <td>{{fecha | date:'medium'}} </td>
+        </tr>
+        <tr>
+          <td>{{fecha}} </td>
+          <td>| date:'short'</td>
+          <td>{{fecha | date:'short'}} </td>
+        </tr>
+        <tr>
+          <td>{{fecha}} </td>
+          <td>| date:'MMMM - dd'</td>
+          <td>{{fecha | date:'MMMM - dd'}} </td>
+        </tr>
+
+        <tr>
+          <td class="table-dark">
+            Personalizado
+          </td>
+        </tr>
+        <tr>
+          <td>{{nombre}} </td>
+          <td>| personalizado</td>
+          <td>{{miNombre | personalizado:true}} </td>
+        </tr>
+        <tr>
+          <td>{{miNombre}} </td>
+          <td>| personalizado:false</td>
+          <td>{{miNombre | personalizado:false}} </td>
+        </tr>
+        <tr>
+          <td><input (input)="convertirMillas($event.target.value)"
+                   type="number" /></td>
+          <td>| milesToKm</td>
+          <td>{{miles | milesToKm}} </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

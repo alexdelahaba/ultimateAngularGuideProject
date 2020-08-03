@@ -1,0 +1,47 @@
+<div class="container">
+  <h3>Interpolacion </h3>
+  <p>{{email}}</p>
+  <p>{{getEmail()}}</p>
+
+  <hr />
+
+
+  <h3>Del ts a la vista</h3>
+  <input [value]="email" />
+  <input [value]="getEmail()" />
+  <hr />
+
+
+  <h3>De la vista al ts (tratamiento de eventos)</h3>
+  <button (click)="devolverEmail()">Accion</button>
+  <br>
+
+  <input (change)="cambiarBooleano()"
+         type="checkbox"
+         placeholder="Activa una funcion con el evento change" />
+  <br>
+
+  <input (input)="imprimirDatosInput($event)"
+         placeholder="Imprime lo que vas escribiendo" />
+  <hr />
+
+
+  <h3>Bidireccional</h3>
+  <p>Importar FormsModule</p>
+  <input [(ngModel)]="password"
+         placeholder="Password se actualiza con este texto" />
+  <br>
+  <hr />
+
+
+  <h3>Referencia a un input</h3>
+  <input type="text"
+         #refInput
+         (keyup)="0" />
+  <p>{{refInput.value}}</p>
+  <hr />
+
+
+  <button (click)="imprimirVariables()">Imprimir variables</button>
+
+</div>

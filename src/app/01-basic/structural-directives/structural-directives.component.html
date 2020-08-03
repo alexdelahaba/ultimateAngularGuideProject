@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Directivas estructurales</h1>
+  <h3>*ngIf & *ngFor</h3>
+  <p *ngIf="true">true</p>
+  <p *ngIf="false">false</p>
+
+  <ol>
+    <li *ngFor="let item of [1,1,1,1]; let i = index">Ejemplo {{i + 1}}</li>
+  </ol>
+
+  <h5>*ngFor + *ngIf</h5>
+
+  <ng-container *ngFor="let item of [0,2,2,0,2]">
+    <p *ngIf="item === 2">Soy un elemento permitido</p>
+  </ng-container>
+
+  <hr />
+  <h3>ngClass</h3>
+  <button class="btn"
+          [ngClass]="{'btn-primary': ejemploBoolean, 'btn-danger':!ejemploBoolean}"
+          (click)="ejemploBoolean = !ejemploBoolean">Click me</button>
+  <button class="btn"
+          [ngClass]="getClass()">Otro button</button>
+  <button class="btn"
+          [ngClass]="claseAplicadaDirectamente">Tercer button</button>
+
+  <hr />
+  <h3>ngSwitch</h3>
+  <button class="btn btn-primary"
+          (click)="numeroPagina = numeroPagina+1">+1</button>
+  <div [ngSwitch]="numeroPagina">
+
+    <div *ngSwitchCase="0">
+      <h1>Titulo</h1>
+    </div>
+    <div *ngSwitchCase="1">
+      <p>Párrafo</p>
+    </div>
+    <div *ngSwitchCase="1">
+      <p>Párrafo tambien en el mismo case del switch</p>
+    </div>
+    <div *ngSwitchCase="2">
+      <h3>Otro titulo</h3>
+    </div>
+    <div *ngSwitchDefault>
+      <h3>Has entrado en el default</h3>
+    </div>
+  </div>
+
+  <hr />
+  <h3>Custom directives</h3>
+  <p>Para generar una directiva customizada => ng g directive miClasePersonalizada
+  </p>
+  <button appMiClasePersonalizada>Boton especial</button>
+</div>
