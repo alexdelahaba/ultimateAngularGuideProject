@@ -10,6 +10,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { PersonalizadoPipe } from './pipes/personalizado.pipe';
 import { MilesToKmPipe } from './pipes/milesToKmPipe.pipe';
 import { FormsModule } from '@angular/forms';
+import { BasicRoutingRoutingModule } from './01-basic-routing-routing.module';
+import { ClassInterfaceComponent } from './class-interface/class-interface.component';
 @NgModule({
   declarations: [
     DataBindingInterpolationComponent,
@@ -20,8 +22,9 @@ import { FormsModule } from '@angular/forms';
     PipesComponent,
     PersonalizadoPipe,
     MilesToKmPipe,
+    ClassInterfaceComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, BasicRoutingRoutingModule],
   exports: [
     DataBindingInterpolationComponent,
     HtmlAttributesComponent,

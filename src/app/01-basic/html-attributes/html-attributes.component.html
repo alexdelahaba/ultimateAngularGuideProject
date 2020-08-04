@@ -3,3 +3,41 @@
 
 <button [disabled]="false"
         [class]="claseElemento">Ejemplo boton</button>
+
+<h1>Events</h1>
+<hr />
+<input (click)="imprimirEvento($event, 'click')"
+       (blur)="imprimirEvento($event, 'blur')"
+       (change)="imprimirEvento($event, 'change')"
+       (click)="imprimirEvento($event, 'click')"
+       (copy)="imprimirEvento($event, 'copy')"
+       (cut)="imprimirEvento($event, 'cut')"
+       (dblclick)="imprimirEvento($event, 'dblclick')"
+       (focus)="imprimirEvento($event, 'focus')"
+       (keydown)="imprimirEvento($event, 'keydown')"
+       (keypress)="imprimirEvento($event, 'keypress')"
+       (keyup)="imprimirEvento($event, 'keyup')"
+       (mousedown)="imprimirEvento($event, 'mousedown')"
+       (mouseenter)="imprimirEvento($event, 'mouseenter')"
+       (mouseleave)="imprimirEvento($event, 'mouseleave')"
+       (mouseover)="imprimirEvento($event, 'mouseover')"
+       (mouseup)="imprimirEvento($event, 'mouseup')"
+       (paste)="imprimirEvento($event, 'paste')"
+       placeholder="Prueba de eventos" />
+<br><br>
+
+<input (mousemove)="imprimirEvento($event, 'mousemove')"
+       placeholder="Prueba de evento mousemove" />
+
+<input minlength="5"
+       maxlength="7"
+       required
+       [disabled]="false" />
+
+<h1>Forms</h1>
+<hr />
+<form (submit)="submitForm(referencia.value)">
+  <input type="text"
+         #referencia
+         placeholder="Escribe aqui y haz click en enter" />
+</form>

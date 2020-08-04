@@ -5,12 +5,14 @@ import { HtmlAttributesComponent } from './html-attributes/html-attributes.compo
 
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ClassInterfaceComponent } from './class-interface/class-interface.component';
 
 const routes: Routes = [
   { path: 'data-binding', component: DataBindingInterpolationComponent },
   { path: 'html-attributes', component: HtmlAttributesComponent },
   { path: 'parent-child', component: ParentChildComponent },
   { path: 'pipes', component: PipesComponent },
+  { path: 'class-interface', component: ClassInterfaceComponent },
 ];
 
 @NgModule({

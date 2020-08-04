@@ -1,0 +1,79 @@
+<!-- Este componente está declarado en el appmodule porque no se puede acoger al lazy loading -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <!-- Las rutas son como las referencias a archivos: -->
+      <!-- Tomemos una ruta actual de localhost:4200/home/profile -->
+      <!-- Si la ruta en el routerLink es SIN /, será relativa a la url actual, por ejemplo, routerLink="hola", hola se aplicará al final de la ruta localhost:4200/home/profile/hole-->
+      <!-- Si la ruta viene con /, se aplicará de manera absoluta, por ejemplo, routerLink="/hola", se aplicará así localhost:4200/hola-->
+      <a class="nav-link"
+         routerLink="/basic/data-binding"
+         routerLinkActive="badge badge-dark">
+        <!-- En el parámetro que se pasa en el routerLinkActive, lo que se hace es indicar la clase del elemento que se aplica si este está activo -->
+        Data-binding</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/basic/html-attributes"
+         routerLinkActive="badge badge-dark">Html-attributes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/basic/parent-child"
+         routerLinkActive="badge badge-dark">Parent-child</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/basic/pipes"
+         routerLinkActive="badge badge-dark">Pipes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/basic/class-interface"
+         routerLinkActive="badge badge-dark">
+        Class - interface</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/intermediate/structural-directives"
+         routerLinkActive="badge badge-dark">
+
+        Structural directives</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/intermediate/ng-content"
+         routerLinkActive="badge badge-dark">
+        Ng-Content</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/intermediate/plus-routing"
+         routerLinkActive="badge badge-dark">
+        Plus routing & children routes</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/intermediate/lifecycle-hooks"
+         routerLinkActive="badge badge-dark">
+        Lifecycle Hooks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/intermediate/data-http"
+         routerLinkActive="badge badge-dark">
+        Data-http</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/advanced/security"
+         routerLinkActive="badge badge-dark">
+        Security</a>
+    </li>
+
+
+
+
+  </ul>
+</nav>

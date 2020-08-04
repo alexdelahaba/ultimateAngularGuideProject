@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -8,7 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChildComponent implements OnInit {
   @Input() datoDeMiPadre: string;
   @Input('datoNumero2') otroDatoRecibido: string;
+
+  @Output() datoOutput = new EventEmitter<string>();
+  datoAEmitir = 'Vengo del hijo';
+  datoAEmitirYSerRecibidoMedianteViewChild =
+    'He sido recibido mediante ViewChild';
   constructor() {}
 
   ngOnInit(): void {}
+
+  emitirAlPadre() {
+    this.datoOutput.emit(this.datoAEmitir);
+  }
 }

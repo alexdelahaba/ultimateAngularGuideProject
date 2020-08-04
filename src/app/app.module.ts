@@ -5,33 +5,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
-import { StructuralDirectivesComponent } from './02-intermediate/structural-directives/structural-directives.component';
-import { MiClasePersonalizadaDirective } from './02-intermediate/structural-directives/mi-clase-personalizada.directive';
 import { NVecesDirective } from './02-intermediate/structural-directives/n-veces.directive';
-import { BasicModule } from './01-basic/01-basic.module';
-import { BasicRoutingRoutingModule } from './01-basic/01-basic-routing-routing.module';
+import { RoutingComponent } from './02-intermediate/routing/routing.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SecurityComponent } from './03-advanced/security/security.component';
 
 @NgModule({
-  //Componentes, pipes, directivas... que pertenecen a este módulo
-  declarations: [
-    AppComponent,
-    MiClasePersonalizadaDirective,
-    NVecesDirective,
-    StructuralDirectivesComponent,
-  ],
-  //Modulos que se importan a este y por tanto, incorporan todo lo exportado en esos modulos
+  // Componentes, pipes, directivas... que pertenecen a este módulo
+  declarations: [AppComponent, NVecesDirective, RoutingComponent, SecurityComponent],
+  // Modulos que se importan a este y por tanto, incorporan todo lo exportado en esos modulos
   imports: [
     BrowserModule,
+    // SE CARGAN MEDIANTE LAZY LOADING
+    // BasicRoutingRoutingModule,
+    // IntermediateRoutingModule,
+    // El modulo de rutas que contenga la '' y la '**' debe estar el ultimo en la lista de imports, en este caso, el AppRoutingModule
     AppRoutingModule,
-    BasicRoutingRoutingModule,
     FormsModule,
-    BasicModule,
+    // SE CARGAN MEDIANTE LAZY LOADING
+    // BasicModule,
+    // IntermediateModule,
+    HttpClientModule,
   ],
-  //Todo lo declarado en este módulo que después quiera ser usado en otro
+  // Todo lo declarado en este módulo que después quiera ser usado en otro
   exports: [],
-  //Ya no se usa
+  // Ya no se usa
   providers: [],
-  //Se usa en el appModule para saber cual es el componente de entrada a la app
+  // Se usa en el appModule para saber cual es el componente de entrada a la app
   bootstrap: [AppComponent],
 })
 export class AppModule {}

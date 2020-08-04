@@ -10,4 +10,14 @@ export class HtmlAttributesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  imprimirEvento(event, tipoEvento: string) {
+    console.log(event);
+    console.log(tipoEvento);
+    console.log('#######################################################');
+  }
+
+  submitForm(element: any) {
+    console.log(element);
+  }
 }

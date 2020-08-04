@@ -1,0 +1,26 @@
+<h1>Yo soy el componente de entrada</h1>
+<!-- Las rutas son como las referencias a archivos: -->
+<!-- Tomemos una ruta actual de localhost:4200/home/profile -->
+<!-- Si la ruta en el routerLink es SIN /, será relativa a la url actual, por ejemplo, routerLink="hola", hola se aplicará al final de la ruta localhost:4200/home/profile/hole-->
+<!-- Si la ruta viene con /, se aplicará de manera absoluta, por ejemplo, routerLink="/hola", se aplicará así localhost:4200/hola-->
+<a class="nav-link"
+   routerLink="first-child"
+   [routerLinkActiveOptions]="{exact:true}"
+   routerLinkActive="text-danger font-weight-bold">Child 1</a>
+<!-- El [routerLinkActiveOptions]="{exact:true}" hace que la clase del link se aplique SOLO si la ruta es exactamente la indicada en el routerLink -->
+<a class="nav-link"
+   routerLink="second-child"
+   [routerLinkActiveOptions]="{exact:true}"
+   routerLinkActive="text-danger font-weight-bold">Child 2</a>
+<p>Se ponen rojas a la vez porque apuntan a la misma ruta</p>
+<a class="nav-link"
+   [routerLink]="[rutaHijo1]"
+   [routerLinkActiveOptions]="{exact:true}"
+   routerLinkActive="text-danger font-weight-bold">Child 1 generated with code</a>
+<a class="nav-link"
+   [routerLink]="[primeraMediaRuta, segundaMediaRuta ]"
+   routerLinkActive="text-danger font-weight-bold">Clicka y mira la ruta</a>
+<!-- Importante para detectar la estructura del routing -->
+<!-- El componente que genere la url se renderiza en el lugar que el router-outlet sea declarado -->
+<!-- Si por ejemplo se mueve este router outlet arriba del todo, los hijos se mostrarán antes que el padre -->
+<router-outlet></router-outlet>
