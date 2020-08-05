@@ -14,6 +14,7 @@ import { Child2Component } from './plus-routing-child-routes/children/child2.com
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { DataHttpRequestsComponent } from './data-http-requests/data-http-requests.component';
 import { ChildComponent } from './lifecycle-hooks/child/child.component';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ChildComponent } from './lifecycle-hooks/child/child.component';
     LifecycleHooksComponent,
     DataHttpRequestsComponent,
     ChildComponent,
+    TemplateFormsComponent,
   ],
   imports: [CommonModule, IntermediateRoutingModule, FormsModule],
   exports: [MiClasePersonalizadaDirective, StructuralDirectivesComponent],

@@ -20,9 +20,7 @@ const routes: Routes = [
   {
     path: 'advanced',
     loadChildren: () =>
-      import('./03-advanced/advanced/advanced.module').then(
-        (m) => m.AdvancedModule
-      ),
+      import('./03-advanced/advanced.module').then((m) => m.AdvancedModule),
   },
   { path: '', component: HtmlAttributesComponent },
   { path: '**', component: HtmlAttributesComponent },

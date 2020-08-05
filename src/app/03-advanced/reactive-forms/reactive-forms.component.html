@@ -1,0 +1,227 @@
+<div class="container">
+  <!-- Formulario simple -->
+  <div class="row mt-5">
+    <div class="col-6">
+
+      <h1>Formulario simple</h1>
+      <hr />
+      <form [formGroup]="simpleForm">
+
+        <input type="text"
+               class="form-control m-3"
+               formControlName="name" />
+
+        <input type="password"
+               class="form-control m-3"
+               formControlName="password" />
+      </form>
+      <div class="alert alert-danger m-3 w-100"
+           *ngIf="!simpleForm.valid"
+           role="alert">
+        El form es inválido, revísalo
+      </div>
+    </div>
+
+    <!-- Feedback del form para comprobar las validaciones, datos...etc -->
+    <div class="col ">
+
+      <div class="text-muted">
+        <h5>Feedback form</h5>
+        <p>Form: {{simpleForm.value | json}}</p>
+        <p>Valid: {{simpleForm.valid}}</p>
+        <p>Errors: </p>
+        <ol>
+          <li>name =>{{simpleForm.controls.name.errors | json}}</li>
+          <li>password
+            =>{{simpleForm.controls.password.errors | json}}</li>
+        </ol>
+      </div>
+      <button type="button"
+              class="btn btn-primary btn-block m-5"
+              (click)="imprimirSimpleForm()">Imprimir</button>
+    </div>
+
+
+  </div>
+
+  <br><br>
+
+
+  <!-- Formulario complejo -->
+  <div class="row mt-5 mb-5">
+    <div class="col-6">
+      <h1>Formulario complejo</h1>
+      <hr />
+      <form [formGroup]="complexForm"
+            (ngSubmit)="submitComplexForm()">
+        <!-- ------ -->
+        <input type="text"
+               class="form-control mt-3 "
+               formControlName="name"
+               placeholder="name"
+               [ngClass]="{'is-invalid':complexForm.controls.name.errors && complexForm.controls.name.touched , 'is-valid': !complexForm.controls.name.errors }" />
+        <div class="invalid-feedback"
+             *ngIf="complexForm.controls.name.errors && complexForm.controls.name.touched">
+          El campo name es inválido
+        </div>
+        <!-- ------ -->
+        <input type="text"
+               class="form-control mt-3 "
+               formControlName="email"
+               placeholder="email"
+               [ngClass]="{'is-invalid':complexForm.controls.email.errors && complexForm.controls.email.touched , 'is-valid': !complexForm.controls.email.errors }" />
+        <div class="invalid-feedback"
+             *ngIf="complexForm.controls.email.errors && complexForm.controls.email.touched">
+          El campo email es inválido
+        </div>
+        <!-- ------ -->
+        <input type="text"
+               class="form-control mt-3 "
+               formControlName="password"
+               placeholder="password"
+               [ngClass]="{'is-invalid':complexForm.controls.password.errors && complexForm.controls.password.touched , 'is-valid': !complexForm.controls.password.errors }" />
+        <div class="invalid-feedback"
+             *ngIf="complexForm.controls.password.errors && complexForm.controls.password.touched">
+          El campo password es inválido
+        </div>
+        <!-- ------ -->
+        <input type="number"
+               class="form-control mt-3 "
+               formControlName="edad"
+               placeholder="edad"
+               [ngClass]="{'is-invalid':complexForm.controls.edad.errors && complexForm.controls.edad.touched , 'is-valid': !complexForm.controls.edad.errors }" />
+        <div class="invalid-feedback"
+             *ngIf="complexForm.controls.edad.errors && complexForm.controls.edad.touched">
+          El campo edad es inválido
+        </div>
+        <!-- ------ -->
+        <textarea class="form-control mt-3 "
+                  formControlName="comentario"
+                  [ngClass]="{'is-invalid':complexForm.controls.comentario.errors && complexForm.controls.comentario.touched , 'is-valid': !complexForm.controls.comentario.errors }"
+                  placeholder="Comentario"></textarea>
+        <div class="invalid-feedback"
+             *ngIf="complexForm.controls.comentario.errors && complexForm.controls.comentario.touched">
+          El campo comentario es inválido
+        </div>
+        <!-- ------ -->
+        <select formControlName="equipoFutbol"
+                class="custom-select"
+                [ngClass]="{'is-invalid':complexForm.controls.equipoFutbol.errors && complexForm.controls.equipoFutbol.touched , 'is-valid': !complexForm.controls.equipoFutbol.errors }">
+          <option value=""
+                  selected>Elige tu equipo favorito</option>
+          <option *ngFor="let valor of opcionesSelect"
+                  [ngValue]="valor">{{valor}}
+          </option>
+        </select>
+        <div class="invalid-feedback"
+             *ngIf="complexForm.controls.equipoFutbol.errors && complexForm.controls.equipoFutbol.touched">
+          El campo equipoFutbol es inválido
+        </div>
+        <br>
+
+        <!-- ------ -->
+        <div class="custom-control custom-checkbox"
+             formGroupName="estaciones"
+             *ngFor="let opcion of opcionesSelectMultiple">
+          <input class="form-check-input"
+                 [value]="opcion"
+                 [name]="opcion"
+                 [id]="opcion"
+                 [ngClass]="{'is-invalid':complexForm.controls.estaciones.errors && complexForm.controls.estaciones.touched , 'is-valid': !complexForm.controls.estaciones.errors }"
+                 [formControlName]="opcion"
+                 type="checkbox">
+          <label class="form-check-label"
+                 [for]="opcion">{{opcion | titlecase}}</label>
+        </div>
+        <br>
+        <!-- ------ -->
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="radio"
+                 name="sexo"
+                 id="varon"
+                 formControlName="sexo"
+                 value="varon"
+                 [ngClass]="{'is-invalid':complexForm.controls.sexo.errors && complexForm.controls.sexo.touched , 'is-valid': !complexForm.controls.sexo.errors }">
+          <label class="form-check-label"
+                 for="varon">
+            Varón
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="radio"
+                 name="sexo"
+                 id="hembra"
+                 formControlName="sexo"
+                 value="hembra"
+                 [ngClass]="{'is-invalid':complexForm.controls.sexo.errors && complexForm.controls.sexo.touched , 'is-valid': !complexForm.controls.sexo.errors }">
+          <label class="form-check-label"
+                 for="hembra">
+            Hembra
+          </label>
+        </div>
+        <!-- ------ -->
+
+        <input type="text"
+               class="form-control mt-3 "
+               formControlName="empresa"
+               placeholder="empresa"
+               [ngClass]="{'is-invalid':complexForm.controls.empresa.errors && complexForm.controls.empresa.touched , 'is-valid': !complexForm.controls.empresa.errors }" />
+        <!-- ------ -->
+        <input type="date"
+               formControlName="fechaHoy"
+               [ngClass]="{'is-invalid':complexForm.controls.fechaHoy.errors && complexForm.controls.fechaHoy.touched, 'is-valid': !complexForm.controls.fechaHoy.errors }"
+               class="form-control mt-3 ">
+        <!-- ------ -->
+        <button class="btn btn-outline-danger btn-block mt-3"
+                (click)="resetForm()">Reset form</button>
+        <button class="btn btn-success btn-block mt-3"
+                [disabled]="!complexForm.valid"
+                type="submit">Enviar form</button>
+
+
+
+      </form>
+
+    </div>
+
+
+    <div class="col-6">
+      <p>Form: {{complexForm.value | json}}</p>
+      <p>Valid: {{complexForm.valid}}</p>
+      <p>Errors: </p>
+      <ol>
+        <li>name =>{{complexForm.controls.name.errors | json}}</li>
+        <li>email =>{{complexForm.controls.email.errors | json}}</li>
+        <li>password
+          =>{{complexForm.controls.password.errors | json}}</li>
+        <li>edad =>{{complexForm.controls.edad.errors | json}}</li>
+        <li>comentario =>{{complexForm.controls.comentario.errors | json}}</li>
+        <li>equipoFutbol =>{{complexForm.controls.equipoFutbol.errors | json}}</li>
+        <li>estaciones =>{{complexForm.controls.estaciones.errors | json}}</li>
+        <li>sexo =>{{complexForm.controls.sexo.errors | json}}</li>
+        <li>empresa =>{{complexForm.controls.empresa.errors | json}}</li>
+        <li>fechaHoy =>{{complexForm.controls.fechaHoy.errors | json}}</li>
+      </ol>
+      <p>Values: </p>
+      <ol>
+        <li>name =>{{complexForm.controls.name.value | json}}</li>
+        <li>email =>{{complexForm.controls.email.value | json}}</li>
+        <li>password
+          =>{{complexForm.controls.password.value | json}}</li>
+        <li>edad =>{{complexForm.controls.edad.value | json}}</li>
+        <li>comentario =>{{complexForm.controls.comentario.value | json}}</li>
+        <li>equipoFutbol =>{{complexForm.controls.equipoFutbol.value | json}}</li>
+        <li>estaciones =>{{complexForm.controls.estaciones.value | json}}</li>
+        <li>sexo =>{{complexForm.controls.sexo.value | json}}</li>
+        <li>empresa =>{{complexForm.controls.empresa.value | json}}</li>
+        <li>fechaHoy =>{{complexForm.controls.fechaHoy.value | json}}</li>
+      </ol>
+      <button type="button"
+              class="btn btn-primary btn-block"
+              (click)="imprimirComplexForm()">Imprimir</button>
+
+    </div>
+
+  </div>
