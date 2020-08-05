@@ -17,6 +17,7 @@ import { ChildComponent } from './lifecycle-hooks/child/child.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 
 @NgModule({
+  // Ver video 438 para más información sobre los módulos
   declarations: [
     MiClasePersonalizadaDirective,
     StructuralDirectivesComponent,

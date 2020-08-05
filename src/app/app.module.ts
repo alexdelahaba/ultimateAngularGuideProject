@@ -12,6 +12,7 @@ import { SecurityComponent } from './03-advanced/security/security.component';
 import { AuthInterceptor } from './03-advanced/interceptors/auth-interceptor.interceptor';
 
 @NgModule({
+  // Ver video 438 para más información sobre los módulos
   // Componentes, pipes, directivas... que pertenecen a este módulo
   declarations: [
     AppComponent,

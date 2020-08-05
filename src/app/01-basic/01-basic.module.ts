@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BasicRoutingRoutingModule } from './01-basic-routing-routing.module';
 import { ClassInterfaceComponent } from './class-interface/class-interface.component';
 @NgModule({
+  // Ver video 438 para más información sobre los módulos
   declarations: [
     DataBindingInterpolationComponent,
     HtmlAttributesComponent,

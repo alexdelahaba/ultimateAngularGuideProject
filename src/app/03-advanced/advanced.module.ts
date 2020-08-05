@@ -10,13 +10,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth-interceptor.interceptor';
 import { GuardsComponent } from './guards/guards.component';
 import { FakeComponentForGuardComponent } from './guards/fakeComponent/fake-component-for-guard.component';
+import { OthersComponent } from './others/others.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
+  // Ver video 438 para más información sobre los módulos
   declarations: [
     ReactiveFormsComponent,
     InterceptorsComponent,
     GuardsComponent,
     FakeComponentForGuardComponent,
+    OthersComponent,
+    RxjsComponent,
   ],
   imports: [
     CommonModule,
