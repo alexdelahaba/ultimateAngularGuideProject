@@ -1,1 +1,43 @@
-<p>template-forms works!</p>
+<div class="container m-5">
+  <div class="row">
+    <div class="col">
+      <h1>Template form</h1>
+      <form #myTemplateForm="ngForm"
+            (ngSubmit)="submitForm(myTemplateForm)">
+        <input type="text"
+               class="mt-3 form-control"
+               placeholder="Nombre"
+               name="nombre"
+               minlength="5"
+               maxlength="15"
+               [(ngModel)]="nombre"
+               required />
+        <div class="alert alert-danger"
+             role="alert"
+             *ngIf="myTemplateForm.form.controls.nombre?.invalid && myTemplateForm.form.controls.nombre.touched">
+          Hay errores en el campo nombre
+        </div>
+        <input type="email"
+               class="mt-3 form-control"
+               placeholder="Email"
+               name="email"
+               required
+               [(ngModel)]="email"
+               pattern="^\S+@\S+$" />
+
+        <button type="submit"
+                [disabled]="myTemplateForm.invalid"
+                class="mt-3 btn btn-success btn-block">Enviar</button>
+      </form>
+    </div>
+
+    <div class="col">
+      <a href="https://developer.mozilla.org/es/docs/HTML/HTML5/Validacion_de_restricciones">Ver info sobre validaciones
+        en HTML</a>
+      <p>{{myTemplateForm.value|json}}</p>
+      <p>Valid? {{myTemplateForm.valid}} </p>
+
+    </div>
+
+  </div>
+</div>

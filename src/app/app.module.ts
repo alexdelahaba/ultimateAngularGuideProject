@@ -7,12 +7,18 @@ import { FormsModule } from '@angular/forms';
 
 import { NVecesDirective } from './02-intermediate/structural-directives/n-veces.directive';
 import { RoutingComponent } from './02-intermediate/routing/routing.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityComponent } from './03-advanced/security/security.component';
+import { AuthInterceptor } from './03-advanced/interceptors/auth-interceptor.interceptor';
 
 @NgModule({
   // Componentes, pipes, directivas... que pertenecen a este módulo
-  declarations: [AppComponent, NVecesDirective, RoutingComponent, SecurityComponent],
+  declarations: [
+    AppComponent,
+    NVecesDirective,
+    RoutingComponent,
+    SecurityComponent,
+  ],
   // Modulos que se importan a este y por tanto, incorporan todo lo exportado en esos modulos
   imports: [
     BrowserModule,

@@ -13,3 +13,7 @@ ng g m nombreModulo
 - Opciones adicionales:
 
 * --routing (para crear un modulo de rutas)
+
+ng g interceptor nombreInterceptor
+
+- Importante dejar el interceptor completo

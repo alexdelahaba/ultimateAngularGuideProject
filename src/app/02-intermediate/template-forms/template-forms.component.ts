@@ -3,14 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-template-forms',
   templateUrl: './template-forms.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class TemplateFormsComponent implements OnInit {
+  nombre = '';
+  email = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  submitForm(myTemplateForm: any) {
+    console.log(myTemplateForm.form.value);
   }
-
 }
