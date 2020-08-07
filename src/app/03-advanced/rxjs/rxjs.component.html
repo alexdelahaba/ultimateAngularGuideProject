@@ -1,1 +1,41 @@
-<p>rxjs works!</p>
+<div class="container m-5">
+  <div class="row">
+    <div class="col-4">
+      <h4>Anotaciones</h4>
+      <p>Unicast vs multicast && hot vs cold: ver video 202</p>
+    </div>
+    <div class="col-4">
+      <h3 class="text-center">Creación de observables</h3>
+      <button class="btn btn-info btn-block"
+              (click)="creacionManualObservables()">Creación manual</button>
+      <button class="btn btn-info btn-block"
+              (click)=" creacionObservablesConOf()">Creación con of</button>
+      <button class="btn btn-info btn-block"
+              (click)=" creacionObservablesConFromEvent()">Creación con fromEvent</button>
+      <button class="btn btn-info btn-block"
+              (click)=" creacionObservablesConRange()">Creación con Range</button>
+      <button class="btn btn-info btn-block"
+              (click)=" creacionObservablesConInterval()">Creación con Interval</button>
+      <button class="btn btn-info btn-block"
+              (click)=" creacionObservablesConTimer()">Creación con Timer</button>
+      <button class="btn btn-info btn-block"
+              (click)=" usarAsyncScheduler()">Usar AsyncScheduler</button>
+      <h3 class="text-center mt-3">Ajax</h3>
+      <button class="btn btn-info btn-block"
+              (click)=" operacionesAjax()">Ajax básico</button>
+      <button class="btn btn-info btn-block"
+              (click)=" otrosVerbosConAjax()">Otros verbos</button>
+
+    </div>
+    <div class="col-4">
+      <h3 class="text-center">Uso de operadores</h3>
+      <div *ngFor="let operator of arrayOperadores">
+        <button class="btn btn-info btn-block m-2"
+                data-toggle="popover"
+                [title]="operator.descripcion"
+                (click)="redireccionadorFunciones(operator.nombre)">{{operator.nombre | titlecase}} - <span
+                class="text-white-50">{{operator.video}}</span></button>
+      </div>
+    </div>
+  </div>
+</div>
