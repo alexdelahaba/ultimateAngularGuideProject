@@ -30,3 +30,11 @@ To be able to use the application you have to clone the repository to local and 
 
 * Angular
 * RXJS
+
+## Screenshots 
+![alt text](https://github.com/alexdelahaba/ultimateAngularGuideProject/blob/master/src/assets/screenshots/1.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/ultimateAngularGuideProject/blob/master/src/assets/screenshots/2.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/ultimateAngularGuideProject/blob/master/src/assets/screenshots/3.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/ultimateAngularGuideProject/blob/master/src/assets/screenshots/4.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/ultimateAngularGuideProject/blob/master/src/assets/screenshots/5.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/ultimateAngularGuideProject/blob/master/src/assets/screenshots/6.PNG?raw=true)
